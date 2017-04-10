@@ -14,7 +14,7 @@ Conditions is a cross platform portable class library that helps developers writ
 
 Installation is done via NuGet:
 
-    Install-Package Conditions
+    Install-Package Conditions.NetStandard
 
 
 ## Usage
