@@ -1,91 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FCC65B26-94A6-4750-9DCD-088694F194A3}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Conditions</RootNamespace>
-    <AssemblyName>Conditions</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <PackageId>Conditions.NetStandard</PackageId>
+    <Title>Conditions built with .NET Standard Library. Forked from https://github.com/ghuntley/conditions</Title>
+    <PackageVersion>1.1.0</PackageVersion>
+    <Authors>Geoffrey Huntley, S. van Deursen, Noman Khalid</Authors>
+    <Description>Forked from https://github.com/ghuntley/conditions available at 'https://www.nuget.org/packages/Conditions/'. Conditions is cross platform .NET standard 1.1 library helps developers to write pre- and postcondition validations in a fluent manner. Writing these validations is easy and it improves the readability and maintainability of code.</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>Updated to .NET Standard 1.3 and fixed embedded resource issue</PackageReleaseNotes>
+    <Copyright></Copyright>
+    <PackageTags>Conditions Runtime Validation Checks NETStandand</PackageTags>
+    <PackageProjectUrl>https://github.com/mnaumank/conditions</PackageProjectUrl>
+    <PackageIconUrl>https://i.imgur.com/XSacNPD.png?2</PackageIconUrl>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="AlternativeExceptionCondition.cs" />
-    <Compile Include="AlternativeExceptionHelper.cs" />
-    <Compile Include="CollectionHelpers.cs" />
-    <Compile Include="Condition.cs" />
-    <Compile Include="ConditionValidator.cs" />
-    <Compile Include="ConstraintViolationType.enum.cs" />
-    <Compile Include="DefaultComparer.cs" />
-    <Compile Include="EnsuresValidator.cs" />
-    <Compile Include="ExceptionMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExceptionMessages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="PostconditionException.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequiresValidator.cs" />
-    <Compile Include="RequiresWithCustomExceptionValidator.cs" />
-    <Compile Include="SR.cs" />
-    <Compile Include="StringificationExtensions.cs" />
-    <Compile Include="Throw.cs" />
-    <Compile Include="ValidatorExtensions.Collection.cs" />
-    <Compile Include="ValidatorExtensions.Compare.Boolean.cs" />
-    <Compile Include="ValidatorExtensions.Compare.Byte.cs" />
-    <Compile Include="ValidatorExtensions.Compare.DateTime.cs" />
-    <Compile Include="ValidatorExtensions.Compare.Decimal.cs" />
-    <Compile Include="ValidatorExtensions.Compare.Double.cs" />
-    <Compile Include="ValidatorExtensions.Compare.IComparable.cs" />
-    <Compile Include="ValidatorExtensions.Compare.Int16.cs" />
-    <Compile Include="ValidatorExtensions.Compare.Int32.cs" />
-    <Compile Include="ValidatorExtensions.Compare.Int64.cs" />
-    <Compile Include="ValidatorExtensions.Compare.Single.cs" />
-    <Compile Include="ValidatorExtensions.cs" />
-    <Compile Include="ValidatorExtensions.Evaluation.cs" />
-    <Compile Include="ValidatorExtensions.Null.cs" />
-    <Compile Include="ValidatorExtensions.String.cs" />
-    <Compile Include="ValidatorExtensions.Type.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ExceptionMessages.resx">
-      <SubType>Designer</SubType>
+    <EmbeddedResource Update="ExceptionMessages.resx">
+      <Generator></Generator>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="project.json" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
